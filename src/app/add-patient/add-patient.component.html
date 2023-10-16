@@ -1,128 +1,174 @@
 <div class="container">
     <p class="text-center">Add Patient</p>
-    <form>
-        <div class="row mb-3">
-            <label for="name" class="col-sm-2 col-form-label">Name</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="name" placeholder="Name">
+    <div class="submit-form">
+        <div *ngIf="!submitted">
+            <div class="form-group">
+                <div class="row mb-3">
+                    <label for="name" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Name" [(ngModel)]="patient.name">
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row mb-3">
-            <label for="age" class="col-sm-2 col-form-label">Age</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="age" placeholder="Age">
+            <div class="form-group">
+                <div class="row mb-3">
+                    <label for="age" class="col-sm-2 col-form-label">Age</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="age" name="age" placeholder="Age" [(ngModel)]="patient.age">
+                    </div>
+                </div>
             </div>
-        </div>
-        <fieldset class="row mb-3">
+            <!-- <fieldset class="row mb-3"> -->
             <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
-            <div class="col-sm-10">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gender" id="gridRadios1" value="male" checked>
-                    <label class="form-check-label" for="gridRadios1">
-                        Male
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gender" id="gridRadios2" value="female">
-                    <label class="form-check-label" for="gridRadios2">
-                        Female
-                    </label>
-                </div>
-            </div>
-        </fieldset>
-        <div class="row mb-3">
-            <label for="country" class="col-sm-2 col-form-label">Country</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="country" placeholder="Country">
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label for="height" class="col-sm-2 col-form-label">Height</label>
-            <div class="col-sm-10">
-                <div class="input-group">
-                    <input type="text" class="form-control" id="height" placeholder="Height in centimeter">
-                    <span class="input-group-text" id="basic-addon2">cm</span>
+            <div class="form-group">
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="gridRadios1" value="male"
+                            checked [(ngModel)]="patient.gender">
+                        <label class="form-check-label" for="gridRadios1">
+                            Male
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="gridRadios2" value="female" [(ngModel)]="patient.gender">
+                        <label class="form-check-label" for="gridRadios2">
+                            Female
+                        </label>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row mb-3">
-            <label for="weight" class="col-sm-2 col-form-label">Weight</label>
-            <div class="col-sm-10">
-                <div class="input-group">
-                    <input type="text" class="form-control" id="weight" placeholder="Weight in kilogram">
-                    <span class="input-group-text" id="basic-addon2">Kg</span>
+            <!-- </fieldset> -->
+            <div class="form-group">
+                <div class="row mb-3">
+                    <label for="country" class="col-sm-2 col-form-label">Country</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="country" name="country" placeholder="Country" [(ngModel)]="patient.country">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row mb-3">
-            <label for="heartRate" class="col-sm-2 col-form-label">Heart Rate</label>
-            <div class="col-sm-10">
-                <div class="input-group">
-                    <input type="text" class="form-control" id="heartRate" placeholder="Heart rate">
-                    <span class="input-group-text" id="basic-addon2">bpm</span>
+            <div class="form-group">
+                <div class="row mb-3">
+                    <label for="height" class="col-sm-2 col-form-label">Height</label>
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="height" name="height"
+                                placeholder="Height in centimeter" [(ngModel)]="patient.height">
+                            <span class="input-group-text" id="basic-addon2">cm</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row mb-3">
-            <label for="bloodPressure" class="col-sm-2 col-form-label">Blood Pressure</label>
-            <div class="col-sm-10">
-                <div class="input-group">
-                    <input type="text" class="form-control" id="bloodPressure" placeholder="Blood pressure">
-                    <span class="input-group-text" id="basic-addon2">mmHg</span>
+            <div class="form-group">
+                <div class="row mb-3">
+                    <label for="weight" class="col-sm-2 col-form-label">Weight</label>
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="weight" name="weight"
+                                placeholder="Weight in kilogram" [(ngModel)]="patient.weight">
+                            <span class="input-group-text" id="basic-addon2">Kg</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row mb-3">
-            <label for="sugar" class="col-sm-2 col-form-label">Sugar Level</label>
-            <div class="col-sm-10">
-                <div class="input-group">
-                    <input type="text" class="form-control" id="sugar" placeholder="Sugar level">
-                    <span class="input-group-text" id="basic-addon2">mg/dL</span>
+            <div class="form-group">
+                <div class="row mb-3">
+                    <label for="heartRate" class="col-sm-2 col-form-label">Heart Rate</label>
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="heartRate" name="heartRate"
+                                placeholder="Heart rate" [(ngModel)]="patient.heartRate">
+                            <span class="input-group-text" id="basic-addon2">bpm</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row mb-3">
-            <label for="allergies" class="col-sm-2 col-form-label">Allergies</label>
-            <div class="col-sm-10">
-                <textarea class="form-control" aria-label="With textarea" placeholder="Pollen, Penicillin"></textarea>
+            <div class="form-group">
+                <div class="row mb-3">
+                    <label for="bloodPressure" class="col-sm-2 col-form-label">Blood Pressure</label>
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="bloodPressure" name="bloodPressure"
+                                placeholder="Blood pressure" [(ngModel)]="patient.bloodPressure">
+                            <span class="input-group-text" id="basic-addon2">mmHg</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row mb-3">
-            <label for="symptoms" class="col-sm-2 col-form-label">Symptoms</label>
-            <div class="col-sm-10">
-                <textarea class="form-control" aria-label="With textarea" placeholder="Fever, Cough"></textarea>
+            <div class="form-group">
+                <div class="row mb-3">
+                    <label for="sugar" class="col-sm-2 col-form-label">Sugar Level</label>
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="sugar" name="sugar" placeholder="Sugar level" [(ngModel)]="patient.sugar">
+                            <span class="input-group-text" id="basic-addon2">mg/dL</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row mb-3">
-            <label for="diseases" class="col-sm-2 col-form-label">Diseases</label>
-            <div class="col-sm-10">
-                <textarea class="form-control" aria-label="With textarea" placeholder="Hypertension, Hypertensionsion"></textarea>
+            <div class="form-group">
+                <div class="row mb-3">
+                    <label for="allergies" class="col-sm-2 col-form-label">Allergies</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="allergies" name="allergies" aria-label="With textarea"
+                            placeholder="Pollen, Penicillin" [(ngModel)]="patient.allergies"></textarea>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row mb-3">
-            <label for="treatments" class="col-sm-2 col-form-label">Treatments</label>
-            <div class="col-sm-10">
-                <textarea class="form-control" aria-label="With textarea" placeholder="Antibiotics, Antibioticstics"></textarea>
+            <div class="form-group">
+                <div class="row mb-3">
+                    <label for="symptoms" class="col-sm-2 col-form-label">Symptoms</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="symptoms" name="symptoms" aria-label="With textarea"
+                            placeholder="Fever, Cough" [(ngModel)]="patient.symptoms"></textarea>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row mb-3">
-            <label for="medicines" class="col-sm-2 col-form-label">Medicines</label>
-            <div class="col-sm-10">
-                <textarea class="form-control" aria-label="With textarea" placeholder="Aspirin, Lisinopril"></textarea>
+            <div class="form-group">
+                <div class="row mb-3">
+                    <label for="diseases" class="col-sm-2 col-form-label">Diseases</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="diseases" name="diseases" aria-label="With textarea"
+                            placeholder="Hypertension, Hypertensionsion" [(ngModel)]="patient.diseases"></textarea>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row mb-3">
-            <label for="history" class="col-sm-2 col-form-label">History</label>
-            <div class="col-sm-10">
-                <textarea class="form-control" aria-label="With textarea" placeholder="No major medical history"></textarea>
+            <div class="form-group">
+                <div class="row mb-3">
+                    <label for="treatments" class="col-sm-2 col-form-label">Treatments</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="treatments" name="treatments" aria-label="With textarea"
+                            placeholder="Antibiotics, Antibioticstics" [(ngModel)]="patient.treatments"></textarea>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row mb-3">
-            <label for="observations" class="col-sm-2 col-form-label">Observations</label>
-            <div class="col-sm-10">
-                <textarea class="form-control" aria-label="With textarea" placeholder="Patient appears to be in good health."></textarea>
+            <div class="form-group">
+                <div class="row mb-3">
+                    <label for="medicines" class="col-sm-2 col-form-label">Medicines</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="medicines" name="medicines" aria-label="With textarea"
+                            placeholder="Aspirin, Lisinopril" [(ngModel)]="patient.medicines"></textarea>
+                    </div>
+                </div>
             </div>
+            <div class="form-group">
+                <div class="row mb-3">
+                    <label for="history" class="col-sm-2 col-form-label">History</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="history" name="history" aria-label="With textarea"
+                            placeholder="No major medical history" [(ngModel)]="patient.history"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row mb-3">
+                    <label for="observations" class="col-sm-2 col-form-label">Observations</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="observations" name="observations" aria-label="With textarea"
+                            placeholder="Patient appears to be in good health." [(ngModel)]="patient.observations"></textarea>
+                    </div>
+                </div>
+            </div>
+            <button (click)="addPatient()" class="btn btn-primary">Add</button>
         </div>
-        <button type="submit" class="btn btn-primary">Add</button>
-    </form>
+    </div>
 </div>
