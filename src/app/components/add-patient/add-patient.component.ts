@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { PatientService } from '../../services/patient.service';
 import { Patient } from '../../model/patient';
+import { PatientService } from 'src/app/services/patientService/patient.service';
 
 @Component({
   selector: 'app-add-patient',
