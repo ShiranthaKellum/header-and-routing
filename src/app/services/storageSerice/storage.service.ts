@@ -14,10 +14,23 @@ export class StorageService {
     window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
   }
 
+  public saveItem(key: string, value: any): void {
+    window.sessionStorage.removeItem(key);
+    window.sessionStorage.setItem(key, value);
+  }
+
   public getUser(): any {
     const user = window.sessionStorage.getItem(USER_KEY);
     if(user) {
       return JSON.parse(user);
+    }
+    return null;
+  }
+
+  public getItem(key: string): any {
+    const item = window.sessionStorage.getItem(key);
+    if(item) {
+      return item;
     }
     return null;
   }
