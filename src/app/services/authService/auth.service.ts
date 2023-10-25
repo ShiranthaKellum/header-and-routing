@@ -18,7 +18,10 @@ const headers = new HttpHeaders({
 })
 export class AuthService {
 
-  constructor(private http: HttpClient, private storageSerice: StorageService) { }
+  constructor(
+    private http: HttpClient, 
+    private storageService: StorageService
+  ) { }
   
   register(username: string, email: string, password: string): Observable<any> {
     return this.http.post(
@@ -44,7 +47,7 @@ export class AuthService {
   }
 
   createAuthorizationHeader(): any {
-    const accessToken = this.storageSerice.getItem('ACCESS_TOKEN');
+    const accessToken = this.storageService.getItem('ACCESS_TOKEN');
     if (accessToken) {
       return new HttpHeaders().set(
         'Authorization', 'Bearer ' + accessToken
