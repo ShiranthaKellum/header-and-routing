@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Patient } from '../../model/patient';
 import { PatientService } from 'src/app/services/patientService/patient.service';
+import { PageUtilService } from 'src/app/services/pageUtilService/page-util.service';
 
 @Component({
   selector: 'app-add-patient',
@@ -8,7 +9,10 @@ import { PatientService } from 'src/app/services/patientService/patient.service'
   styleUrls: ['./add-patient.component.css'],
 })
 export class AddPatientComponent {
-  constructor(private patientService: PatientService) {}
+  constructor(
+    private patientService: PatientService,
+    private pageUtilService: PageUtilService
+  ) {}
   submitted: boolean = false;
   patient: Patient = {
     name: '',
@@ -51,6 +55,7 @@ export class AddPatientComponent {
       next: res => {
         console.log("Submission responce: ", res);
         this.submitted = true;
+        this.pageUtilService.reloadPage();
       },
       error: e => console.log("Submission error: ", e)
     })
