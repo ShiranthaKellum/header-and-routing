@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 const USER_KEY = 'auth-user';
+const ACCESS_TOKEN = "ACCESS_TOKEN";
 
 @Injectable({
   providedIn: 'root'
@@ -41,5 +42,10 @@ export class StorageService {
       return true;
     }
     return false;
+  }
+
+  public logout(): void {
+    window.sessionStorage.removeItem(USER_KEY);
+    window.sessionStorage.removeItem(ACCESS_TOKEN);
   }
 }
