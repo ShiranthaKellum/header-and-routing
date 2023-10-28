@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { StorageService } from '../storageSerice/storage.service';
 import { AuthService } from '../authService/auth.service';
 
-const baseUrl = 'http://localhost:8080/patient/create';
+const baseUrl = 'http://localhost:8080/patient';
 
 @Injectable({
   providedIn: 'root',
@@ -15,12 +15,20 @@ export class PatientService {
     private storageService: StorageService,
     private authService: AuthService
   ) {}
-  accessToken: string = '';
+
   create(data: any): Observable<any> {
-    this.accessToken = this.storageService.getItem('ACCESS_TOKEN');
     return this.http.post(
-      baseUrl, 
+      baseUrl + "/create", 
       data, 
+      {
+        headers: this.authService.createAuthorizationHeader()
+      }
+    );
+  }
+
+  getAllPatients(): Observable<any> {
+    return this.http.get(
+      baseUrl + "/get-all-patients",
       {
         headers: this.authService.createAuthorizationHeader()
       }

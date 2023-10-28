@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { GetAllPatientsComponent } from './components/get-all-patients/get-all-patients.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { LogoutComponent } from './components/logout/logout.component';
     AddPatientComponent,
     RegisterComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    GetAllPatientsComponent
   ],
   imports: [
     BrowserModule,
