@@ -15,7 +15,9 @@
         <td>{{ item.age }}</td>
         <td>{{ item.gender }}</td>
         <td>{{ item.country }}</td>
-        <td>More...</td>
+        <td>
+          <button type="button" class="btn btn-light" (click)="navigateToPatientProfile(item.id)">More...</button>
+        </td>
       </tr>
     </tbody>
   </table>

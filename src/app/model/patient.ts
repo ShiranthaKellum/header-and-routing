@@ -7,7 +7,7 @@ export class Patient {
   weight?: string;
   heartRate?: string;
   bloodPressure?: string;
-  sugar?: string;
+  sugarLevel?: string;
   allergies?: string;
   symptoms?: string;
   diseases?: string;

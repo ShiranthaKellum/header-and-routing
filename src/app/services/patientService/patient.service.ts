@@ -34,4 +34,13 @@ export class PatientService {
       }
     );
   }
+  
+  getPatientDetails(patientId: String): Observable<any> {
+      return this.http.get(
+        baseUrl + "/get-patient/" + patientId,
+        {
+          headers: this.authService.createAuthorizationHeader()
+        }
+      )
+  }
 }

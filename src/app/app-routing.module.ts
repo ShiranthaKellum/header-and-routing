@@ -5,6 +5,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { GetAllPatientsComponent } from './components/get-all-patients/get-all-patients.component';
+import { PatientProfileComponent } from './components/patient-profile/patient-profile.component';
 
 const routes: Routes = [
   { path: '', component: AddPatientComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'signin', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'get-all-patients', component: GetAllPatientsComponent },
+  { path: 'patient-profile/:id', component: PatientProfileComponent }
 ];
 
 @NgModule({
