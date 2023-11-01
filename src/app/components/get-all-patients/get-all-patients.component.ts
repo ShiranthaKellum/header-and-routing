@@ -29,7 +29,6 @@ export class GetAllPatientsComponent implements OnInit {
   }
 
   navigateToPatientProfile(patientId: string): void {
-    let patientData: string[];
     this.patientService.getPatientDetails(patientId).subscribe(
       data => {
         const patientDataToProfile: NavigationExtras = {

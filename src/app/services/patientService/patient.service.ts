@@ -41,6 +41,16 @@ export class PatientService {
         {
           headers: this.authService.createAuthorizationHeader()
         }
-      )
+      );
+  }
+
+  updatePatient(patientId: string, data: any): Observable<any> {
+    return this.http.put(
+      baseUrl + "/update/" + patientId,
+      data,
+      {
+        headers: this.authService.createAuthorizationHeader()
+      }
+    );
   }
 }
