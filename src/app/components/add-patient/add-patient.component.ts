@@ -58,6 +58,6 @@ export class AddPatientComponent {
         this.pageUtilService.reloadPage();
       },
       error: e => console.log("Submission error: ", e)
-    })
+    });
   }
 }

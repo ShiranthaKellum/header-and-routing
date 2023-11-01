@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { PatientService } from 'src/app/services/patientService/patient.service';
 
 @Component({
@@ -19,7 +19,8 @@ export class PatientProfileComponent implements OnInit{
   observations: any[] = [];
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
     
   ngOnInit(): void {
@@ -41,5 +42,19 @@ export class PatientProfileComponent implements OnInit{
 
   getDataIntoAnArray(input: string): any {
     return input.split(',').map(item => item.trim());
+  }
+
+  sendToEdit(patient: any, patientId: string): any {
+    const patientDataToEdit: NavigationExtras = {
+      state: {
+        patientData: patient
+      }
+    }
+    this.router.navigate([
+      "edit-patient", 
+      patientId
+    ],
+    patientDataToEdit
+    );
   }
 }

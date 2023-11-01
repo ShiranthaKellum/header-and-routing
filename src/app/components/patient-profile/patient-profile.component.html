@@ -2,6 +2,7 @@
 <div>
     <div class="container">
         <p class="text-center">{{ patientData.name }}</p>
+        <button type="button" class="btn btn-primary" (click)="sendToEdit(patientData, patientData.id)">Edit</button>
         <div class="row justify-content-md-center">
             <div class="submit-form col-md-8">
                 <div>
