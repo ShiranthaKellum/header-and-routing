@@ -2,48 +2,48 @@
     <div class="row justify-content-md-center">
         <div class="col-md-4">
             <p>Register</p>
-            <form 
-                name="form" 
-                (ngSubmit)="onSubmit()"
-                *ngIf="!isSuccessful"
-                >
+            <form name="form" (ngSubmit)="onSubmit()" *ngIf="!isSuccessful">
                 <div class="form-group">
                     <div class="form-floating mb-3">
-                        <input 
-                        type="text" 
-                        class="form-control" 
-                        id="username" 
-                        name="username"
-                        placeholder="name@example.com"
-                        [(ngModel)]="form.username"
-                        >
+                        <input type="text" class="form-control" id="username" name="username"
+                            placeholder="name@example.com" [(ngModel)]="form.username">
                         <label for="username">Username</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-floating mb-3">
-                        <input 
-                        type="email" 
-                        class="form-control" 
-                        id="email" 
-                        name="email"
-                        placeholder="name@example.com"
-                        [(ngModel)]="form.email"
-                        >
+                        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com"
+                            [(ngModel)]="form.email">
                         <label for="email">Email</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-floating mb-3">
-                        <input 
-                        type="text" 
-                        class="form-control" 
-                        id="password" 
-                        name="password"
-                        placeholder="name@example.com"
-                        [(ngModel)]="form.password"
-                        >
+                        <input type="text" class="form-control" id="password" name="password"
+                            placeholder="name@example.com" [(ngModel)]="form.password">
                         <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="admin" value="admin"
+                            [(ngModel)]="roles['admin']" name="roles">
+                        <label class="form-check-label" for="admin">Admin</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="doctor" value="doctor"
+                            [(ngModel)]="roles['doctor']" name="roles">
+                        <label class="form-check-label" for="doctor">Doctor</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="contributor" value="contributor"
+                            [(ngModel)]="roles['contributor']" name="roles">
+                        <label class="form-check-label" for="contributor">Contributor</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="user" value="user"
+                            [(ngModel)]="roles['user']" name="roles">
+                        <label class="form-check-label" for="user">User</label>
                     </div>
                 </div>
                 <div class="form-group">
