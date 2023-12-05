@@ -1,8 +1,25 @@
-<p>patient-profile</p>
 <div>
-    <div class="container">
-        <p class="text-center">{{ patientData.name }}</p>
-        <button type="button" class="btn btn-primary" (click)="sendToEdit(patientData, patientData.id)">Edit</button>
+    <div class="container-fluid">
+        <div class="row justify-content-md-center">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-10">
+                        <p class="profile-header">Rev. {{ patientData.name }}'s profile</p>
+                    </div>
+                    <div class="col-1 align-self-center">
+                        <button type="button" class="btn btn-dark" (click)="sendToEdit(patientData, patientData.id)">
+                            <fa-icon [icon]="faPenToSquare"></fa-icon>
+                        </button>
+                    </div>
+                    <div class="col-1 align-self-center">
+                        <button type="button" class="btn btn-dark">
+                            <fa-icon [icon]="faArrowLeft"></fa-icon>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
         <div class="row justify-content-md-center">
             <div class="submit-form col-md-8">
                 <div>
@@ -98,7 +115,7 @@
                         <div class="form-group">
                             <div class="row md-3">
                                 <div class="col-sm-2 col-form-label">
-                                    <label for="age" class="col-sm-2 col-form-label">Allergies</label>
+                                    <label for="age" class="col-sm-2 col-form-label align-self-center">Allergies</label>
                                 </div>
                                 <div class="col-sm-10">
                                     <div *ngFor="let item of allergies">

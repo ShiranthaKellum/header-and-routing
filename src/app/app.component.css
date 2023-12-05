@@ -1,1 +1,14 @@
-@import "~bootstrap/dist/css/bootstrap.css";
+.nav-link, a {
+    font-family: var(--fontFamily);
+    font-size: large;
+}
+.logo {
+    border-radius: 20px;
+}
+.user-icon {
+    color: aliceblue;
+    padding: 10px 0;
+}
+.username {
+    padding: 0 16px 0 0;
+}

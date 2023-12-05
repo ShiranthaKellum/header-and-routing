@@ -12,6 +12,7 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { GetAllPatientsComponent } from './components/get-all-patients/get-all-patients.component';
 import { PatientProfileComponent } from './components/patient-profile/patient-profile.component';
 import { EditPatientComponent } from './components/edit-patient/edit-patient.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { EditPatientComponent } from './components/edit-patient/edit-patient.com
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

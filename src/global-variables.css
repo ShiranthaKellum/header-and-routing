@@ -1,0 +1,15 @@
+:root {
+    /* fonts */
+    --fontFamily: cursive;
+    
+    /* heights */
+    --fullPageHeight: 93.5vh;
+
+    /* background-color */
+    --light-gray:  #f5f5f5;
+    --ivory: #fffff0;
+    --pale-blue: #c7d4e2;
+    --mint-green:  #f0fff4;
+    --gentle-lavender: #e6e6fa;
+    --beige: #f5f5dc;
+}

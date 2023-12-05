@@ -1,0 +1,38 @@
+.screen-container {
+    display: flex;
+}
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--fullPageHeight);
+    margin: 0;
+    width: 100%;
+}
+.login-form {
+    text-align: center;
+}
+.form-container, .right-half {
+    flex: 1;
+}
+.right-half {
+    background-image: url("../../../assets/images/img2.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.login-header {
+    font-family: var(--fontFamily);
+    font-size: xx-large;
+}
+button {
+    font-family: var(--fontFamily);
+    font-size: large;
+}
+.try-button-area {
+    margin: 30px 0 0;
+}
+@media(max-width: 800px) {
+    .screen-container{
+        flex-direction: column;
+    }
+}

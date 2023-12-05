@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/services/authService/auth.service';
+import { PageUtilService } from 'src/app/services/pageUtilService/page-util.service';
 
 @Component({
   selector: 'app-register',
@@ -20,8 +21,12 @@ export class RegisterComponent {
   };
   isSuccessful: boolean = false;
   errorMessage: string = '';
+  isRegistrationFailed: boolean = false;
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private pageUtilService: PageUtilService  
+  ) {}
 
   onSubmit(): void {
     const { username, email,  password } = this.form;
@@ -35,7 +40,12 @@ export class RegisterComponent {
       error: e => {
         this.errorMessage = e.error.message;
         this.isSuccessful = false;
+        this.isRegistrationFailed = true;
       }
     });
+  }
+
+  reloadPage (): void {
+    this.pageUtilService.reloadPage();
   }
 }

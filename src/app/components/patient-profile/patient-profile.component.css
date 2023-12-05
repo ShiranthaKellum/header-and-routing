@@ -4,3 +4,14 @@
 .row {
     padding-bottom: 5px;
 }
+.container-fluid {
+    background-color: var(--gentle-lavender);
+}
+.profile-header {
+    font-family: var(--fontFamily);
+    font-size: xx-large;
+    padding: 25px 0 20px;
+}
+.col-1 {
+    padding: 0 24px;
+}

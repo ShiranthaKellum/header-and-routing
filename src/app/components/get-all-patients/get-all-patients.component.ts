@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { PatientService } from 'src/app/services/patientService/patient.service';
+import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-get-all-patients',
@@ -8,6 +9,9 @@ import { PatientService } from 'src/app/services/patientService/patient.service'
   styleUrls: ['./get-all-patients.component.css']
 })
 export class GetAllPatientsComponent implements OnInit {
+  // icons
+  faCircleInfo = faCircleInfo;
+
   constructor(
     private patientService: PatientService,
     private router: Router
