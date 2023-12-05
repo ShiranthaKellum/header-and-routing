@@ -1,6 +1,5 @@
-<p>edit-patient works!</p>
-<div class="container">
-    <p class="text-center">Edit Patient</p>
+<div class="container-fluid">
+    <p class="text-center">Edit rev. {{patientData.name}}'s record</p>
     <div class="row justify-content-md-center">
         <div class="submit-form col-md-8">
             <div *ngIf="!updated">
@@ -178,7 +177,7 @@
                 </div>
                 <div class="row justify-content-sm-center">
                     <div class="col-1">
-                        <button (click)="updatePatient()" class="btn btn-primary">Update</button>
+                        <button (click)="updatePatient()" class="btn btn-dark">Update</button>
                     </div>
                 </div>
             </div>

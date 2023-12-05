@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit{
   roles: string[] = [];
   errorMessage: string = '';
   accessToken: string = '';
+  isLoginFailed: boolean = false;
 
   constructor(
     private authService: AuthService, 
@@ -33,6 +34,7 @@ export class LoginComponent implements OnInit{
   }
 
   onSubmit(): void {
+    // this.pageUtilService.reloadPage();
     const { username, password } = this.form;
     this.authService.login(username, password).subscribe({
       next: response => {
@@ -47,7 +49,12 @@ export class LoginComponent implements OnInit{
       error: e => {
         this.errorMessage = e.error.message; 
         this.isLoggedIn = false;
+        this.isLoginFailed = true;
       }
     });
+  }
+
+  reloadPage(): void {
+    this.pageUtilService.reloadPage();
   }
 }

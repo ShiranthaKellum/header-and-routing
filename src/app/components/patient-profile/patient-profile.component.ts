@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
-import { PatientService } from 'src/app/services/patientService/patient.service';
+import { faPenToSquare,  } from '@fortawesome/free-regular-svg-icons';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-patient-profile',
@@ -8,6 +9,10 @@ import { PatientService } from 'src/app/services/patientService/patient.service'
   styleUrls: ['./patient-profile.component.css']
 })
 export class PatientProfileComponent implements OnInit{
+  // icons
+  faPenToSquare = faPenToSquare;
+  faArrowLeft = faArrowLeft;
+
   id: string = '';
   patientData: any;
   allergies: any[] = [];

@@ -1,0 +1,14 @@
+.container-fluid {
+    background-color: var(--gentle-lavender);
+}
+.text-center {
+    font-family: var(--fontFamily);
+    font-size: xx-large;
+    padding: 25px 0 20px;
+}
+
+button {
+    font-family: var(--fontFamily);
+    font-size: large;
+    margin: 0 0 25px;
+}

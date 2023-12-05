@@ -1,3 +1,9 @@
 .modal-content {
     background-color: aliceblue;
 }
+.modal-header, .modal-footer {
+    border: white;
+}
+.modal-header, .modal-content {
+    font-family: var(--fontFamily);
+}
