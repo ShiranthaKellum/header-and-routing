@@ -1,0 +1,17 @@
+.container-fluid {
+    padding: 0 20px;
+    background-color: var(--gentle-lavender);
+}
+.text-center {
+    font-family: var(--fontFamily);
+    font-size: xx-large;
+    padding: 25px 0 20px;
+}
+.btn {
+    margin: 0 5px;
+}
+@media(max-height: 100vh) {
+    .container-fluid {
+        height: 100vh;
+    }
+}

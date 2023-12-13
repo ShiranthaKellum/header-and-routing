@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { PatientService } from '../services/patient.service';
-import { Patient } from '../model/patient';
+import { Patient } from '../../model/patient';
+import { PatientService } from 'src/app/services/patientService/patient.service';
+import { PageUtilService } from 'src/app/services/pageUtilService/page-util.service';
 
 @Component({
   selector: 'app-add-patient',
@@ -8,7 +9,10 @@ import { Patient } from '../model/patient';
   styleUrls: ['./add-patient.component.css'],
 })
 export class AddPatientComponent {
-  constructor(private patientService: PatientService) {}
+  constructor(
+    private patientService: PatientService,
+    private pageUtilService: PageUtilService
+  ) {}
   submitted: boolean = false;
   patient: Patient = {
     name: '',
@@ -19,7 +23,7 @@ export class AddPatientComponent {
     weight: '',
     heartRate: '',
     bloodPressure: '',
-    sugar: '',
+    sugarLevel: '',
     allergies: '',
     symptoms: '',
     diseases: '',
@@ -38,7 +42,7 @@ export class AddPatientComponent {
       weight: this.patient.weight,
       heartRate: this.patient.heartRate,
       bloodPressure: this.patient.bloodPressure,
-      sugar: this.patient.sugar,
+      sugarLevel: this.patient.sugarLevel,
       allergies: this.patient.allergies,
       symptoms: this.patient.symptoms,
       diseases: this.patient.diseases,
@@ -51,8 +55,9 @@ export class AddPatientComponent {
       next: res => {
         console.log("Submission responce: ", res);
         this.submitted = true;
+        this.pageUtilService.reloadPage();
       },
       error: e => console.log("Submission error: ", e)
-    })
+    });
   }
 }

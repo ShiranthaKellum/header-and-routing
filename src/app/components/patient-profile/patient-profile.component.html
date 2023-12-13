@@ -1,0 +1,230 @@
+<div>
+    <div class="container-fluid">
+        <div class="row justify-content-md-center">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-10">
+                        <p class="profile-header">Rev. {{ patientData.name }}'s profile</p>
+                    </div>
+                    <div class="col-1 align-self-center">
+                        <button type="button" class="btn btn-dark" (click)="sendToEdit(patientData, patientData.id)">
+                            <fa-icon [icon]="faPenToSquare"></fa-icon>
+                        </button>
+                    </div>
+                    <div class="col-1 align-self-center">
+                        <button type="button" class="btn btn-dark">
+                            <fa-icon [icon]="faArrowLeft"></fa-icon>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="submit-form col-md-8">
+                <div>
+                    <div class="form-group">
+                        <div class="row mb-3">
+                            <label for="name" class="col-sm-2 col-form-label">Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value={{patientData.name}} readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row mb-3">
+                            <label for="age" class="col-sm-2 col-form-label">Age</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value={{patientData.age}} readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row mb-3">
+                            <label for="age" class="col-sm-2 col-form-label">Gender</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value={{patientData.gender}} readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row mb-3">
+                            <label for="country" class="col-sm-2 col-form-label">Country</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value={{patientData.country}} readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row mb-3">
+                            <label for="height" class="col-sm-2 col-form-label">Height</label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" value={{patientData.height}} readonly>
+                                    <span class="input-group-text" id="basic-addon2">cm</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row mb-3">
+                            <label for="weight" class="col-sm-2 col-form-label">Weight</label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" value={{patientData.weight}} readonly>
+                                    <span class="input-group-text" id="basic-addon2">Kg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row mb-3">
+                            <label for="heartRate" class="col-sm-2 col-form-label">Heart Rate</label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" value={{patientData.heartRate}} readonly>
+                                    <span class="input-group-text" id="basic-addon2">bpm</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row mb-3">
+                            <label for="bloodPressure" class="col-sm-2 col-form-label">Blood Pressure</label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" value={{patientData.bloodPressure}}
+                                        readonly>
+                                    <span class="input-group-text" id="basic-addon2">mmHg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row mb-3">
+                            <label for="sugar" class="col-sm-2 col-form-label">Sugar Level</label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" value={{patientData.sugarLevel}} readonly>
+                                    <span class="input-group-text" id="basic-addon2">mg/dL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="form-group">
+                            <div class="row md-3">
+                                <div class="col-sm-2 col-form-label">
+                                    <label for="age" class="col-sm-2 col-form-label align-self-center">Allergies</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div *ngFor="let item of allergies">
+                                        <div class="row">
+                                            <input type="text" class="form-control" value={{item}} readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="form-group">
+                            <div class="row md-3">
+                                <div class="col-sm-2 col-form-label">
+                                    <label for="age" class="col-sm-2 col-form-label">Symptoms</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div *ngFor="let item of symptoms">
+                                        <div class="row">
+                                            <input type="text" class="form-control" value={{item}} readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="form-group">
+                            <div class="row md-3">
+                                <div class="col-sm-2 col-form-label">
+                                    <label for="age" class="col-sm-2 col-form-label">Diseases</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div *ngFor="let item of diseases">
+                                        <div class="row">
+                                            <input type="text" class="form-control" value={{item}} readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="form-group">
+                            <div class="row md-3">
+                                <div class="col-sm-2 col-form-label">
+                                    <label for="age" class="col-sm-2 col-form-label">Treatments</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div *ngFor="let item of treatments">
+                                        <div class="row">
+                                            <input type="text" class="form-control" value={{item}} readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="form-group">
+                            <div class="row md-3">
+                                <div class="col-sm-2 col-form-label">
+                                    <label for="age" class="col-sm-2 col-form-label">Medicines</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div *ngFor="let item of medicines">
+                                        <div class="row">
+                                            <input type="text" class="form-control" value={{item}} readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="form-group">
+                            <div class="row md-3">
+                                <div class="col-sm-2 col-form-label">
+                                    <label for="age" class="col-sm-2 col-form-label">History</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div *ngFor="let item of history">
+                                        <div class="row">
+                                            <input type="text" class="form-control" value={{item}} readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="form-group">
+                            <div class="row md-3">
+                                <div class="col-sm-2 col-form-label">
+                                    <label for="age" class="col-sm-2 col-form-label">Observations</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div *ngFor="let item of observations">
+                                        <div class="row">
+                                            <input type="text" class="form-control" value={{item}} readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
