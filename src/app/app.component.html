@@ -36,6 +36,11 @@
             <a class="nav-link" routerLink="get-all-patients">All Patients</a>
           </li>
         </div>
+        <div *ngIf="isAdmin">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="admin-dashboard">Dashboard</a>
+          </li>
+        </div>
         <div class="position-absolute end-0">
           <li class="nav-item">
             <div class="username">

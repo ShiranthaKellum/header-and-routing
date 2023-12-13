@@ -5,10 +5,6 @@ import { StorageService } from '../storageSerice/storage.service';
 
 const AUTH_API = "http://localhost:8080/api/auth";
 
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-  observe: 'response'
-};
 const headers = new HttpHeaders({
   'Content-Type': 'application/json'
 });
@@ -23,14 +19,14 @@ export class AuthService {
     private storageService: StorageService
   ) { }
   
-  register(username: string, email: string, password: string, roles: string[]): Observable<any> {
+  register(username: string, email: string, password: string, requestedRoles: string[]): Observable<any> {
     return this.http.post(
       AUTH_API + '/signup',
       {
         username,
         email,
         password,
-        roles
+        requestedRoles
       },
       { headers }
     );

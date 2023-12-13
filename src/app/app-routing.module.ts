@@ -7,6 +7,7 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { GetAllPatientsComponent } from './components/get-all-patients/get-all-patients.component';
 import { PatientProfileComponent } from './components/patient-profile/patient-profile.component';
 import { EditPatientComponent } from './components/edit-patient/edit-patient.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 
 const routes: Routes = [
   { path: '', component: AddPatientComponent },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'logout', component: LogoutComponent },
   { path: 'get-all-patients', component: GetAllPatientsComponent },
   { path: 'patient-profile/:id', component: PatientProfileComponent },
-  { path: 'edit-patient/:id', component: EditPatientComponent }
+  { path: 'edit-patient/:id', component: EditPatientComponent },
+  { path: 'admin-dashboard', component: AdminDashboardComponent }
 ];
 
 @NgModule({

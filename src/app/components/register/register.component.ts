@@ -16,8 +16,7 @@ export class RegisterComponent {
   roles: { [key: string]: boolean } = {
     "admin": false,
     'doctor': false,
-    "contributor": false,
-    "user": false
+    "contributor": false
   };
   isSuccessful: boolean = false;
   errorMessage: string = '';
@@ -30,10 +29,9 @@ export class RegisterComponent {
 
   onSubmit(): void {
     const { username, email,  password } = this.form;
-    const selectedRoles = Object.keys(this.roles).filter(role => this.roles[role]);
-    console.log(selectedRoles);
+    const requestedRoles = Object.keys(this.roles).filter(role => this.roles[role]);
     
-    this.authService.register(username, email, password, selectedRoles).subscribe({
+    this.authService.register(username, email, password, requestedRoles).subscribe({
       next: () => {
         this.isSuccessful = true;
       },

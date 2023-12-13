@@ -13,6 +13,7 @@ import { GetAllPatientsComponent } from './components/get-all-patients/get-all-p
 import { PatientProfileComponent } from './components/patient-profile/patient-profile.component';
 import { EditPatientComponent } from './components/edit-patient/edit-patient.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     LogoutComponent,
     GetAllPatientsComponent,
     PatientProfileComponent,
-    EditPatientComponent
+    EditPatientComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,
