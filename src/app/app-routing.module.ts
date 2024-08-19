@@ -8,6 +8,7 @@ import { GetAllPatientsComponent } from './components/get-all-patients/get-all-p
 import { PatientProfileComponent } from './components/patient-profile/patient-profile.component';
 import { EditPatientComponent } from './components/edit-patient/edit-patient.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { AssignRoleComponent } from './components/assign-role/assign-role.component';
 
 const routes: Routes = [
   { path: '', component: AddPatientComponent },
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'get-all-patients', component: GetAllPatientsComponent },
   { path: 'patient-profile/:id', component: PatientProfileComponent },
   { path: 'edit-patient/:id', component: EditPatientComponent },
-  { path: 'admin-dashboard', component: AdminDashboardComponent }
+  { path: 'admin-dashboard', component: AdminDashboardComponent },
+  { path: 'assign-roles/:id', component: AssignRoleComponent }
 ];
 
 @NgModule({

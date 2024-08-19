@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 import { UserService } from 'src/app/services/userService/user.service';
 
 @Component({
@@ -8,7 +9,8 @@ import { UserService } from 'src/app/services/userService/user.service';
 })
 export class AdminDashboardComponent {
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) {}
 
   roleRequestedUserList: any[] = [];
@@ -22,6 +24,7 @@ export class AdminDashboardComponent {
     ["doctor", "Doctor"],
     ["contributor", "Contributor"]
   ]);
+  roleRequestedUserData: any;
 
   ngOnInit (): void {
     this.loadData();
@@ -37,5 +40,21 @@ export class AdminDashboardComponent {
   
   renderRole(role: string): any {
     return this.roleNameMap.get(role);
+  }
+
+  navigateToAssignRoles(user: { [key: string]: any }): void {
+    console.log(user['id']);
+    const userId = user['id'];
+    const dataToAssignRoles: NavigationExtras = {
+      state: {
+        roleRequestedUserData: user
+      }
+    }
+    this.router.navigate([
+      "assign-roles",
+      userId
+    ],
+    dataToAssignRoles
+    );
   }
 }

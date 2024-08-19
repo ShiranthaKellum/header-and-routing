@@ -1,8 +1,10 @@
 <p>admin-dashboard works!</p>
 <div class="container-fluid">
-        <div class="card" *ngFor="let user of roleRequestedUserList" onclick="">
-            <div class="card-body">
-              {{user.username}}
-            </div>
-          </div>
+  <div *ngFor="let user of roleRequestedUserList">
+    <div class="card" (click)="navigateToAssignRoles(user)">
+      <div class="card-body">
+        {{user.username}}
+      </div>
+    </div>
+  </div>
 </div>

@@ -23,4 +23,14 @@ export class UserService {
       }
     );
   }
+
+  updateRoles(userId: string, data: any): Observable<any> {
+    return this.http.put(
+      baseUrl + "/user/" + userId + "/update-roles",
+      data,
+      {
+        headers: this.authService.createAuthorizationHeader()
+      }
+    );
+  } 
 }

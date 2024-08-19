@@ -14,6 +14,7 @@ import { PatientProfileComponent } from './components/patient-profile/patient-pr
 import { EditPatientComponent } from './components/edit-patient/edit-patient.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { AssignRoleComponent } from './components/assign-role/assign-role.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
     GetAllPatientsComponent,
     PatientProfileComponent,
     EditPatientComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    AssignRoleComponent
   ],
   imports: [
     BrowserModule,
